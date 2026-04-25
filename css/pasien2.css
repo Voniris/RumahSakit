@@ -6,7 +6,7 @@
 }
 
 .header-logo img {
-  height:66px; /* Sesuaikan dengan ukuran logomu */
+  height: 66px; /* Sesuaikan dengan ukuran logomu */
 }
 
 .dashboard-container {
@@ -34,7 +34,6 @@
   align-items: center;
 }
 
-
 /* ─────────────────────────────────────────
    7. FORM CARD (form pasien baru / lama)
    ───────────────────────────────────────── */
@@ -47,7 +46,6 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
-
 /* Menargetkan kotak input saat sedang diklik/aktif */
 .form-card input:focus, 
 .form-card select:focus, 
@@ -57,9 +55,6 @@
   outline: none; /* Menghilangkan garis biru bawaan browser */
   background-color: #f9fffE; /* Sedikit perubahan warna background biar kontras */
 }
-
-
-
 
 /* ─────────────────────────────────────────
    8. STEPPER
@@ -128,7 +123,6 @@
   min-width: 24px;
 }
 
-
 /* ─────────────────────────────────────────
    9. FORM INPUT (dalam form card)
    ───────────────────────────────────────── */
@@ -147,7 +141,8 @@
   color: #005461;
   margin-bottom: 24px;
 }
-/* GANTI DENGAN INI YAA */
+
+/* --- TOMBOL KEMBALI & SELANJUTNYA --- */
 .form-action {
   display: flex;
   justify-content: space-between; /* Ini yang bikin tombolnya misah ke kiri dan kanan */
@@ -177,3 +172,107 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
 }
 
+/* ─────────────────────────────────────────
+   10. HALAMAN OTP
+   ───────────────────────────────────────── */
+
+/* --- KONTINER OTP --- */
+.otp-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Memastikan semua elemen di tengah */
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* --- IKON WHATSAPP --- */
+.wa-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  background-color: #00828C; /* Warna bulat hijau */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 130, 140, 0.2);
+}
+
+/* --- TEKS OTP --- */
+.otp-container h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #005461;
+  margin-bottom: 5px;
+}
+
+.otp-subtitle {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.otp-resend {
+  font-size: 13px;
+  color: #888;
+  font-weight: 500;
+}
+
+.otp-resend a {
+  color: #00828C; /* Warna khusus teks Kirim Ulang */
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.otp-resend a:hover {
+  text-decoration: underline;
+}
+
+/* --- KOTAK INPUT OTP (Garis Bawah) --- */
+.otp-inputs {
+  display: flex;
+  gap: 15px; /* Jarak antar garis */
+  margin: 30px 0;
+}
+
+.otp-box {
+  width: 45px;
+  height: 50px;
+  border: none;
+  border-bottom: 4px solid #b0b0b0; /* Warna garis bawah abu-abu */
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  color: #333;
+  background-color: transparent;
+  outline: none;
+  transition: border-color 0.2s;
+  /* Supaya warna background input tidak berubah pas di-klik karena CSS lamamu */
+  box-shadow: none !important; 
+}
+
+/* Saat kotak diketik / diklik, garis bawah jadi hijau */
+.otp-box:focus {
+  border-bottom: 4px solid #00828C;
+  background-color: transparent !important;
+}
+
+/* --- TOMBOL VERIFIKASI --- */
+.btn-verifikasi {
+  background-color: #00828C;
+  color: #ffffff;
+  border: none;
+  padding: 12px 40px;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.btn-verifikasi:hover {
+  background-color: #005461;
+  transform: translateY(-2px);
+}
