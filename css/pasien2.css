@@ -147,17 +147,33 @@
   color: #005461;
   margin-bottom: 24px;
 }
-
+/* GANTI DENGAN INI YAA */
 .form-action {
   display: flex;
-  justify-content: flex-end;
-  margin-top: 20px;
+  justify-content: space-between; /* Ini yang bikin tombolnya misah ke kiri dan kanan */
+  align-items: center;
+  margin-top: 30px;
 }
 
-.form-action .btn-primary {
-  width: auto;
-  padding: 10px 32px;
-  font-size: 13px;
+.btn-kembali, 
+.btn-selanjutnya {
+  background-color: #00828C; /* Warna tosca */
+  color: #ffffff;
+  border: none;
+  padding: 12px 36px; 
+  border-radius: 25px; 
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); 
+  transition: all 0.3s ease;
 }
 
+.btn-kembali:hover, 
+.btn-selanjutnya:hover {
+  background-color: #005461; /* Warna hijau tua saat disorot mouse */
+  transform: translateY(-2px); 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+}
 
