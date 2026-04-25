@@ -47,7 +47,7 @@
             </div>
 
             <h2>Masukkan Kode OTP</h2>
-            <p class="otp-subtitle">To 0881_ _ _ _</p>
+            <p class="otp-subtitle" id="teksTujuanOTP">To 0881_ _ _ _</p>
             <p class="otp-resend">Tidak Mendapatkan Kode? <a href="#">Kirim Ulang</a></p>
 
             <div class="otp-inputs">
@@ -72,6 +72,25 @@
   
   <script>
     const otpInputs = document.querySelectorAll('.otp-box');
+
+    // Tunggu sampai halaman selesai dimuat
+document.addEventListener("DOMContentLoaded", function() {
+  
+  // 1. Ambil nomor dari memori browser yang disimpan tadi
+  const nomorTersimpan = sessionStorage.getItem('nomorPasien');
+  
+  // 2. Cek apakah ada nomor yang tersimpan
+  if (nomorTersimpan && nomorTersimpan.length >= 4) {
+    // Ambil 4 angka pertama saja (contoh: 0881)
+    const empatAngkaDepan = nomorTersimpan.substring(0, 4);
+    
+    // Gabungkan dengan efek sensor
+    const nomorDisensor = "To " + empatAngkaDepan + "_ _ _ _";
+    
+    // 3. Tampilkan di layar menggantikan teks bawaan
+    document.getElementById('teksTujuanOTP').innerText = nomorDisensor;
+  }
+});
 
     otpInputs.forEach((input, index) => {
       input.addEventListener('input', (e) => {

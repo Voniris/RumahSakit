@@ -70,12 +70,12 @@
             </div>
             <div class="form-group">
               <label>Nomor Telepon / WhatsApp</label>
-              <input type="tel" placeholder="" />
+            <input type="tel" id="noWhatsApp" placeholder="Contoh: 08812345678" />
             </div>
 
             <div class="form-action">
            <button type="button" class="btn-kembali" onclick="window.location.href='dashboard_pasien.html'">Kembali</button>
-           <button type="button" class="btn-selanjutnya" onclick="window.location.href='otp.html'">Selanjutnya</button>
+           <button type="button" class="btn-selanjutnya" onclick="simpanLanjutOTP()">Selanjutnya</button>
             </div>
           </form>
 
@@ -86,5 +86,17 @@
   </div>
 
   <script src="../../js/main.js"></script>
+  <script>
+  function simpanLanjutOTP() {
+    // 1. Ambil nomor yang diketik pasien
+    const nomorWA = document.getElementById('noWhatsApp').value;
+    
+    // 2. Simpan di memori browser sementara (sessionStorage)
+    sessionStorage.setItem('nomorPasien', nomorWA);
+    
+    // 3. Pindah ke halaman OTP
+    window.location.href = 'otp.html';
+  }
+</script>
 </body>
 </html>
