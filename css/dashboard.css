@@ -193,9 +193,8 @@
   gap: 30px;
   color: white;
   width: 75%;
-  max-width: 720px;
+  max-width: 700px;
   position: relative;
-  overflow: hidden; /* penting */
 }
 
 .card-left h2 {
@@ -210,17 +209,75 @@
   margin-bottom: 20px;
 }
 
-.select-jenis {
-  width: 200px;
-  padding: 9px 12px;
-  border-radius: 8px;
-  border: none;
-  font-size: 13px;
+/* --- Wrapper Utama Dropdown --- */
+.custom-dropdown {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
   font-family: 'Poppins', sans-serif;
-  margin-bottom: 14px;
-  outline: none;
+}
+
+/* --- Tombol Pemicu Dropdown --- */
+.dropdown-trigger {
+  padding: 12px 40px 12px 20px;
+  border-radius: 20px;
+  background-color: #f5f5f5;
+  color: #005461;
+  font-size: 14px;
+  font-weight: 600;
   cursor: pointer;
-  color: #333;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  
+  /* Ikon Segitiga dari Assets Kamu */
+  background-image: url('../assets/icons/segitiga.png');
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  background-size: 12px;
+  
+  /* Supaya teks tidak bisa diblok/highlight */
+  user-select: none; 
+}
+
+/* --- Kotak Pembungkus Pilihan (Tersembunyi secara default) --- */
+.dropdown-options {
+  position: absolute;
+  top: 105%; /* Jarak jatuhnya dari tombol utama */
+  left: 0;
+  width: 100%;
+  background-color: transparent; /* Ini yang bikin kotak putihnya hilang! */
+  box-shadow: none; /* Hilangkan bayangan kotak pembungkus */
+  padding: 0;
+  display: none; 
+  z-index: 10;
+}
+
+/* Class tambahan untuk memunculkan dropdown via JS */
+.dropdown-options.show {
+  display: block;
+}
+
+/* --- Desain Pilihan "Pasien Baru" & "Pasien Lama" (BEBAS DIMODIF) --- */
+.option-item {
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff; /* Teks warna putih */
+  background-color: #005461; /* Background warna hijau khas RS-mu */
+  border-radius: 20px; /* Bentuk kapsul membulat penuh */
+  margin-top: 10px; /* Jarak melayang antar tombol */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+/* Hapus garis bawah di opsi paling akhir */
+.option-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Efek saat mouse diarahkan ke pilihan (Hover) */
+.option-item:hover {
+  background-color: #06363d; /* Warna hijaunya sedikit lebih gelap saat disorot */
 }
 
 .pilihan-buttons {
@@ -257,8 +314,9 @@
 
 .dokter-img {
   height: 500px;        /* bebas mau gede */
-  margin-left: -67px;   /* keluar kiri */
-  margin-bottom: -60px; /* turun dikit */
+  margin-left: -67px;
+  margin-top: -100px;   /* keluar kiri */
+  margin-bottom: -48px; /* turun dikit */
 }
 
 
