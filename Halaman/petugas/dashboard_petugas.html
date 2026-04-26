@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <title>Dashboard Petugas - Rumah Sakit Viamedika</title>
+  
   <link rel="stylesheet" href="../../css/style.css" />
   <link rel="stylesheet" href="../../css/dashboard.css" />
   <link rel="stylesheet" href="../../css/dashboard_petugas.css" />
@@ -20,11 +21,15 @@
 
       <nav class="sidebar-menu">
         <a href="#" class="menu-item active">
-          <img src="../../assets/icons/pendaftaran.png" width="18" />
+          <img src="../../assets/icons/beranda.png" />
+          <span>Dashboard</span>
+        </a>
+        <a href="#" class="menu-item">
+          <img src="../../assets/icons/pendaftaran.png" />
           <span>Pendaftaran</span>
         </a>
-        <a href="#" class="menu-item" style="margin-top: 10px;">
-          <img src="../../assets/icons/panggill.png" width="25" />
+        <a href="#" class="menu-item">
+          <img src="../../assets/icons/panggill.png" />
           <span>Panggil Antrian</span>
         </a>
       </nav>
@@ -66,7 +71,7 @@
               Biodata Pasien
             </h2>
             
-           <form>
+            <form>
               <div class="input-group">
                 <label>Nomor Induk Kependudukan (NIK)</label>
                 <div class="input-wrapper">
@@ -99,7 +104,7 @@
                 </div>
               </div>
               <br>
-              <button type="button" class="btn-cetak-antrian">
+              <button type="button" class="btn-cetak-antrian" onclick="window.location.href='antrianbypetugas.html'">
                 <img src="../../assets/icons/printer.png" alt="Print">
                 Cetak Nomor Antrian
               </button>

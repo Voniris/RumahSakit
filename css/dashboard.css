@@ -43,27 +43,36 @@
 .sidebar-menu {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 15px; /* Jarak antar kotak menu */
   flex: 1;
+  margin-top: 50px; /* Jarak dari logo ke menu pertama */
 }
 
+/* KODE PERBAIKAN LEBAR MENU ADA DI SINI */
 .menu-item {
+  width: 195px; /* Lebar dibatasi agar tidak kepanjangan */
+  margin: 0 auto; /* Supaya posisinya di tengah-tengah sidebar */
+  padding: 12px 20px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
-  margin-top: 50px;
-  gap: 50px;
-  width: 250px;
-  align-self: center;
-  padding: 10px 20px;
-  border-radius: 10px;
+  gap: 15px; /* Jarak antara ikon dan teks */
   text-decoration: none;
-  font-size: 16px;
+  font-size: 14px; /* Sedikit dikecilkan agar pas dengan lebar kotak */
   color: #555;
   transition: background 0.2s, color 0.2s;
 }
 
+/* Membatasi ukuran ikon agar rapi */
+/* Memaksa semua ikon punya ukuran tinggi yang sama biar seragam */
+.menu-item img {
+  width: 25px;   /* Lebar tetap 25px sesuai maumu */
+  height: 25px;  /* Paksa tinggi juga 25px biar gak ada yang lonjong/kegedean */
+  object-fit: contain; /* Jurus sakti biar gambar gak gepeng walau dipaksa ukurannya */
+}
+
 .menu-item.active {
-  background: #ECECEC; /*pendaftaran*/
+  background: #ECECEC;
   color: #005461;
   font-weight: 600;
 }
@@ -72,13 +81,14 @@
   background: #f5f5f5;
 }
 
+/* Jarak sebelum tombol logout */
 .btn-logout {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  width: 250px;   
-  align-self: center;   
+  width: 195px; /* Disamakan dengan lebar menu-item */
+  margin: 0 auto; /* Ditengahkan */
   padding: 10px 20px;
   background: #e53935;
   color: #fff;
@@ -416,5 +426,3 @@
   padding: 10px 32px;
   font-size: 13px;
 }
-
-
